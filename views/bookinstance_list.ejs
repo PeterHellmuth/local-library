@@ -2,7 +2,7 @@
 <h1><%= title%></h1>
 <ul>
   <% if(bookinstance_list.length > 0){ bookinstance_list.forEach((val) =>{ %>
-    <li><a href=`{val.url}`><%=`${val.book.title} : ${val.imprint}`%></a>
+    <li><<a href="<%=val.url%>"><%=`${val.book.title} : ${val.imprint}`%></a>
     <% if(val.status =='Available') { %>
     
     <span class="text-success"><%=val.status%></span>
