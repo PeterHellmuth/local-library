@@ -1,0 +1,22 @@
+<h1><%=title%></h1>
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="name">Genre: </label>
+        <% if(genre){ %>
+            <input id="genre.form-control" type="text" placeholder="Fantasy, Poetry etc." name="name" value="<%=genre.name%>">
+        <%} else{ %>
+            <input id="genre.form-control" type="text" placeholder="Fantasy, Poetry etc." name="name" value="">
+        <%}%>
+        
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<%if(errors){ %>
+    <ul>
+        <%errors.forEach((error) =>{ %>
+            <li><%=error.msg%></li>
+
+        <%});%>
+    </ul>
+<%}%>

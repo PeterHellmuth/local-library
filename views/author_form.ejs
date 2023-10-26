@@ -1,0 +1,44 @@
+<h1><%=title%></h1>
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="first_name">First Name: </label>
+        <% if(author){ %>
+            <input id="first_name.form-control" type="text" placeholder="First name" name="first_name" value="<%=author.first_name%>">
+        <%} else{ %>
+            <input id="first_name.form-control" type="text" placeholder="First name" name="first_name" value="">
+        <%}%>
+        <label for="family_name">Family Name: </label>
+        <% if(author){ %>
+            <input id="family_name.form-control" type="text" placeholder="First name" name="family_name" value="<%=author.family_name%>">
+        <%} else{ %>
+            <input id="family_name.form-control" type="text" placeholder="Family name" name="family_name" value="">
+        <%}%>
+        
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Date of birth: </label>
+        <% if(author){ %>
+            <input id="date_of_birth.form-control" type="date" name="date_of_birth" value="<%=author.date_of_birth%>">
+        <%} else{ %>
+            <input id="date_of_birth.form-control" type="date" name="date_of_birth" value="">
+        <%}%>
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Date of death: </label>
+        <% if(author){ %>
+            <input id="date_of_death.form-control" type="date" name="date_of_death" value="<%=author.date_of_death%>">
+        <%} else{ %>
+            <input id="date_of_death.form-control" type="date" name="date_of_death" value="">
+        <%}%>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<%if(errors){ %>
+    <ul>
+        <%errors.forEach((error) =>{ %>
+            <li><%=error.msg%></li>
+
+        <%});%>
+    </ul>
+<%}%>
