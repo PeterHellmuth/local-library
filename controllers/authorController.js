@@ -220,12 +220,14 @@ exports.author_update_post = [
       });
       return;
     } else {
-      // Data from form is valid.
-
-      // Save author.
-      await author.save();
-      // Redirect to new author record.
-      res.redirect(author.url);
+      // Data from form is valid. Update the record.
+      const updatedAuthor = await Author.findByIdAndUpdate(
+        req.params.id,
+        author,
+        {}
+      );
+      // Redirect to book detail page.
+      res.redirect(updatedAuthor.url);
     }
   }),
 ];

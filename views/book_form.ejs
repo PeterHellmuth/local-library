@@ -15,7 +15,7 @@
             <% authors.sort(function(a, b) {let textA = a.family_name.toUpperCase(); let textB = b.family_name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
             authors.forEach((author) => { %>
                 <%if(book){ %>
-                    <option value="<%=author._id%>" selected="<%=author._id.toString()===book.author._id.toString() ? 'selected' : false%>"><%=author.name%></option>
+                    <option value="<%=author._id%>" <%=author._id.toString()===book.author._id.toString() ? 'selected' : ''%>><%=author.name%></option>
                 <%} else{ %>
                     <option value="<%=author._id%>"><%=author.name%></option>
                 <%}%>
