@@ -21,9 +21,6 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
-// Create the Express application object
-const app = express();
-
 // Set up rate limiter: maximum of twenty requests per minute
 const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
